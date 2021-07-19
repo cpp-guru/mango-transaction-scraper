@@ -1,0 +1,33 @@
+{
+  "name": "mango-transaction-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "update-pnl-cache": "ts-node src/updatePnlCache/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/nicholasgodfreyclarke/mango-instruction-stats",
+  "author": "Nicholas Clarke",
+  "license": "MIT",
+  "homepage": "https://github.com/nicholasgodfreyclarke/mango-instruction-stats#readme",
+  "dependencies": {
+    "@blockworks-foundation/mango-client": "^2.1.3",
+    "@solana/web3.js": "^1.2.7",
+    "axios": "^0.21.1",
+    "bs58": "^4.0.1",
+    "package.json": "^2.0.1",
+    "pg": "^8.6.0",
+    "pg-format": "^1.0.4",
+    "pg-promise": "^10.10.2",
+    "node-cron": "^3.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
