@@ -133,7 +133,7 @@ async function runCron() {
     notify('Initialized mango-pnl')
     console.log('Initialized mango-pnl')
 
-    // cron.schedule("*/10 * * * *", async () => {
+    cron.schedule("*/10 * * * *", async () => {
         try {
             console.log('updating cache')
             console.log((new Date()).toISOString())
@@ -147,7 +147,7 @@ async function runCron() {
             notify(e.toString())
             throw e
         }
-    // })
+    })
 }
 
 runCron()
