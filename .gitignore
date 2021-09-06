@@ -2,7 +2,6 @@ dist
 node_modules
 .vscode
 logs.*
-yarn.lock
 *.ps1
 *.env
 *.log

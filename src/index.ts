@@ -101,7 +101,8 @@ function ParseLiquidationData(instruction, instructionNum, confirmedTransaction)
         }
     }
 
-    let collRatio = startAssetsVal / startLiabsVal;
+    // add epsilon to prevent exploding coll ratio
+    let collRatio = startAssetsVal / (startLiabsVal+0.0001);
     let inTokenPrice = prices[symbols.indexOf(inTokenSymbol)];
     let outTokenPrice = prices[symbols.indexOf(outTokenSymbol)];
 
@@ -272,7 +273,7 @@ function parseMangoTransactions(transactions) {
 
                 processStates.push({signature: signature, process_state: 'processed'});
             }
-        } catch(e) {
+        } catch(e: any) {
             console.log(e.stack)
             processStates.push({signature: signature, process_state: 'processing error'});
         }
@@ -594,7 +595,7 @@ async function main() {
         try {
             await consumeTransactions()
         }
-        catch(e) {
+        catch(e: any) {
             notify(e.toString())
             console.log(e, e.stack)
             // Wait for 10 mins

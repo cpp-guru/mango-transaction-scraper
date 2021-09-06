@@ -143,7 +143,7 @@ async function runCron() {
             
             hrend = process.hrtime(hrstart)
             console.log('Execution time (hr): %ds %dms', hrend[0], hrend[1] / 1000000)
-        } catch(e) {
+        } catch(e: any) {
             notify(e.toString())
             throw e
         }
